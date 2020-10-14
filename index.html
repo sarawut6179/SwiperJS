@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwipeJS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/06bc39cf2c.js" crossorigin="anonymous"></script>  
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">  
+    <link rel="stylesheet" href="css/hamburgers.css">
+    
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Mitr', sans-serif;
+            font-weight: 400;
+        }
+        .swiper-container{
+            padding-top: 60px;
+        }
+        .swiper-container, .swiper-slide img{
+            width: 100vw;
+            height: auto;            
+        }
+        .navbar{
+            padding: 15px 0px;
+        }
+        .navbar-toggler{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .navbar-toggler{
+            position: absolute;
+            top:20px;
+            left:20px;
+            outline: 0 !important;
+        }
+
+        .hamburger .hamburger-box .hamburger-inner::before{
+            width: 30px !important;
+        }
+
+        .hamburger .hamburger-box .hamburger-inner{
+            width: 30px !important;
+        }
+        
+        .hamburger .hamburger-box .hamburger-inner::after{
+            width: 30px !important;
+        }
+        @media screen and (min-width: 50px){
+            /*Hide Desktop Slide*/
+            .desktop {
+                display: none;
+            }
+            /*Show Mobile Slide*/
+            .mobile {
+                display: block;
+            }
+            .navbar-brand{
+                margin-left: 100px;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .nav{
+                z-index: 100;
+            }
+            .navbar-collapse {
+                z-index: 100;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 15px;
+                width: 100%;
+                background-color: white;
+            }
+            .navbar-collapse.collapsing {
+                height: auto;
+                -webkit-transition: left 0.1s ease;
+                -o-transition: left 0.1s ease;
+                -moz-transition: left 0.1s ease;
+                transition: left 0.1s ease;
+                left: -100%;
+            }
+            .navbar-collapse.show {
+                left: 0;
+                -webkit-transition: left 0.1s ease-in;
+                -o-transition: left 0.1s ease-in;
+                -moz-transition: left 0.1s ease-in;
+                transition: left 0.1s ease-in;
+            }
+        }
+        @media screen and (min-width: 1170px){
+             /*Hide Desktop Slide*/
+            .desktop {
+                display: block;
+            }
+            /*Show Mobile Slide*/
+            .mobile {
+                display: none;
+            }
+            .navbar-brand{
+                margin-left: 10px;
+            }
+        }
+
+    </style>    
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">SwiperJS</a>
+        <!-- <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> -->
+        <button class="navbar-toggler d-lg-none hamburger hamburger--collapse" data-toggle="collapse" data-target="#collapsibleNavId" 
+        aria-controls="collapsibleNavId" aria-expanded="false" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+          
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Service</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contat</a>
+                </li>
+        </div>
+    </nav>
+    <!-- Desktop Slide -->
+<div class="swiper-container desktop">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+            <img src="images/banner1.png" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="images/banner2.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="images/banner3.jpg" alt="">
+        </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <!-- <div class="swiper-scrollbar"></div> -->
+</div>
+
+    <!-- Mobile Slide -->
+    <div class="swiper-container mobile">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img src="images/banner1_mobile.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/banner2_mobile.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/banner3_mobile.jpg" alt="">
+            </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    
+        <!-- If we need scrollbar -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+    <div class="container-fluid my-4">
+        <h1>Swiper Slide</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, modi voluptate? Fugiat ab ad dolorum dolor iure architecto asperiores? Distinctio dolor aut, vero iste excepturi delectus ipsa qui error odio.</p>
+
+        <h1>My Content</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quis ad officiis aperiam, similique qui id molestias mollitia dolor error architecto voluptatibus, deleniti non quisquam iste autem odio dicta voluptatem!</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" 
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 5000,
+        },
+        mousewheel: {
+            invert: true,
+        },
+        
+        })
+    </script>
+
+<script>    
+      var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
+  
+      var hamburgers = document.querySelectorAll(".hamburger");
+      if (hamburgers.length > 0) {
+        forEach(hamburgers, function(hamburger) {
+          hamburger.addEventListener("click", function() {
+            this.classList.toggle("is-active");
+          }, false);
+        });
+      }
+    </script>
+</body>
+</html>
